@@ -1,6 +1,6 @@
 const db = require("quick.db")
 const Discord = require("discord.js")
-const client = Discord.Client({disableEveryone: true})
+const client = new Discord.Client({disableEveryone: true})
 client.economy = new db.table("economy")
 const cooldowns = new Discord.Collection();
 const fs = require("fs")
@@ -23,7 +23,7 @@ for(const module1 of modules) {
 client.on('message', message => {
     let prefix = client.config.get(message.guild.id + ".prefix")
     if (!prefix) {
-      prefix = "e!"
+      prefix = "+" 
     } 
     const ch = client.channels.cache.find(e => e.id == 605698279975419904)
     client.squeue = client.queue.get(message.guild.id)
@@ -37,7 +37,7 @@ client.on('message', message => {
     if (command && client.blacklist.has(message.author.id) && message.author.id != 445234723590242304) return message.reply("lol ur on the blacklist ripperonies pepperonies dont abuse the bot's api")
     if (command.ownerOnly && message.author.id != 445234723590242304) return message.reply("only the owner can use this command")
     if (command.permission && !message.member.hasPermission(command.permission)) return message.channel.send(`you dont have permissions to use this command`)
-    if (message.channel.type == 'dm') return message.reply('y u tryina use these commands in dm')
+    if (message.channel.type == 'dm') return;
     if (command.hidden) return
     if (!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Discord.Collection());
@@ -66,4 +66,4 @@ client.on('message', message => {
       console.log(error)
     }
 });
-client.login("")
+client.login("Njg3NzY2MzY1OTY4NjYyNTYx.XmqiXg.HgCVEFfwqNkheQyLb5WnoX1xUcI")
