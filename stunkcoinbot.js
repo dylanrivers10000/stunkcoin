@@ -63,4 +63,4 @@ client.on('message', message => {
       console.log(error)
     }
 });
-client.login("Njg3NzY2MzY1OTY4NjYyNTYx.XmqiXg.HgCVEFfwqNkheQyLb5WnoX1xUcI")
+client.login("Njg3MTIwNzc0MTE2NTQwNDE2.XmqtnA.6O7mX5uD-hlT8KYD23DxEd_WaeQ")

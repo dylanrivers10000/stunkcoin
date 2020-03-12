@@ -1,7 +1,7 @@
 module.exports = {
   name:"lend",
   module: "stuff",
-  cooldown: 300000,
+  cooldown: 300,
   execute: (client, message, args) => {
     const name = args[0]
     let member = message.mentions.members.first()
