@@ -4,9 +4,9 @@ const client = new Discord.Client({disableEveryone: true})
 client.economy = new db.table("economy")
 const cooldowns = new Discord.Collection();
 const fs = require("fs")
-
+client.commands = new Discord.Collection()
 client.on("ready", () => {
-    console.log("bot ready, made by fiverlol")
+    console.log("Stunkcoin is ready and online! Created by abkelol on Fiverr.")
 })
 
 const modules = fs.readdirSync(`./cmd/`).filter(file => !file.startsWith("_"))
@@ -21,10 +21,9 @@ for(const module1 of modules) {
 }
 
 client.on('message', message => {
-    let prefix = client.config.get(message.guild.id + ".prefix")
-    if (!prefix) {
-      prefix = "+" 
-    } 
+    
+    let prefix = "+" 
+    
     const ch = client.channels.cache.find(e => e.id == 605698279975419904)
     client.squeue = client.queue.get(message.guild.id)
     if (!message.content.startsWith(prefix) || message.author.bot) return;
