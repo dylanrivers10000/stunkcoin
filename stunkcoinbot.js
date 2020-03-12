@@ -7,6 +7,7 @@ const fs = require("fs")
 client.commands = new Discord.Collection()
 client.on("ready", () => {
     console.log("Stunkcoin is ready and online! Created by abkelol on Fiverr.")
+    client.user.setActivity("+help | in development")
 })
 
 
@@ -32,7 +33,7 @@ client.on('message', message => {
         || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
     
     if (!command) return;
-    if (command.ownerOnly && message.author.id != 445234723590242304) return message.reply("only the owner can use this command")
+    if (command.ownerOnly && message.author.id != 362806280458469376) return message.reply("only the owner can use this command")
     if (command.permission && !message.member.hasPermission(command.permission)) return message.channel.send(`you dont have permissions to use this command`)
     if (message.channel.type == 'dm') return;
     if (command.hidden) return
@@ -48,7 +49,7 @@ client.on('message', message => {
         let totalSeconds = (smth / 1000);
         let days = Math.floor(totalSeconds / 86400);
         let hours = Math.floor(totalSeconds / 3600);
-        totalSeconds %= 3600;
+        totalSeconds %= 360
         let minutes = Math.floor(totalSeconds / 60);
         let seconds = Math.floor(totalSeconds % 60);
         if (now < expirationTime) {
@@ -63,4 +64,4 @@ client.on('message', message => {
       console.log(error)
     }
 });
-client.login("Njg3MTIwNzc0MTE2NTQwNDE2.XmqtnA.6O7mX5uD-hlT8KYD23DxEd_WaeQ")
+client.login("")
