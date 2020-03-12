@@ -9,6 +9,8 @@ client.on("ready", () => {
     console.log("Stunkcoin is ready and online! Created by abkelol on Fiverr.")
 })
 
+
+
 const modules = fs.readdirSync(`./cmd/`).filter(file => !file.startsWith("_"))
 for(const module1 of modules) {
 	const commandFiles = fs.readdirSync(`./cmd/${module1}/`).filter(file => file.endsWith('.coffee') || file.endsWith(".js"));
@@ -21,11 +23,8 @@ for(const module1 of modules) {
 }
 
 client.on('message', message => {
-    
     let prefix = "+" 
-    
     const ch = client.channels.cache.find(e => e.id == 605698279975419904)
-    client.squeue = client.queue.get(message.guild.id)
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
@@ -33,7 +32,6 @@ client.on('message', message => {
         || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
     
     if (!command) return;
-    if (command && client.blacklist.has(message.author.id) && message.author.id != 445234723590242304) return message.reply("lol ur on the blacklist ripperonies pepperonies dont abuse the bot's api")
     if (command.ownerOnly && message.author.id != 445234723590242304) return message.reply("only the owner can use this command")
     if (command.permission && !message.member.hasPermission(command.permission)) return message.channel.send(`you dont have permissions to use this command`)
     if (message.channel.type == 'dm') return;
