@@ -24,7 +24,7 @@ for(const module1 of modules) {
 }
 
 client.on('message', message => {
-    let prefix = "+" 
+    let prefix = ">" 
     const ch = client.channels.cache.find(e => e.id == 605698279975419904)
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ +/);
