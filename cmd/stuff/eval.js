@@ -12,7 +12,6 @@ module.exports = {
     const channel = message.channel
     const author = message.author
     const user = message.member.user
-    if (guild.id == 666753894784958495) return message.reply("noob this is syg lol")
 		const clean = text => {
             if (typeof(text) === "string") return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
             else return text;
@@ -22,8 +21,7 @@ module.exports = {
             let evaled = eval(code);
             if (typeof evaled !== "string") {
 				evaled = require("util").inspect(evaled);
-			}
-            return message.channel.send(clean(evaled), {code:"js"});
+            return message.channel.send(clean(evaled), {code:"js"});}
         } catch (err) {      
             return message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``, {code: "js"});
         }
