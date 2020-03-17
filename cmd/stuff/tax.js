@@ -18,4 +18,3 @@ module.exports = {
   }
 }
 
-// idot stop being lazy and make other commands
