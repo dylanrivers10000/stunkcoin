@@ -24,7 +24,7 @@ for(const module1 of modules) {
 }
 
 client.on('message', message => {
-    let prefix = ">" 
+    let prefix = "+" 
     const ch = client.channels.cache.find(e => e.id == 605698279975419904)
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -64,4 +64,4 @@ client.on('message', message => {
       console.log(error)
     }
 });
-client.login("Njg3MTIwNzc0MTE2NTQwNDE2.XnEQ8g.c0rwCTaN3XBwpnKA2UMsaUpelqA")
+client.login("Njg3MTIwNzc0MTE2NTQwNDE2.XnEgjQ.jF_x2S8rStFtZuUepxERX9Sw_w8")
