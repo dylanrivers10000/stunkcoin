@@ -1,8 +1,8 @@
-//https://www.youtube.com/watch?v=QLO4tg0ubXc
+//https://www.youtube.com/watch?v=_C0zX6_WJJg
 module.exports = {
-  name:"intro",
+  name: "engintro",
   module: "stuff",
   execute: (client, message, args) => {
-    message.channel.send("https://www.youtube.com/watch?v=QLO4tg0ubXc")
+    message.channel.send("https://www.youtube.com/watch?v=_C0zX6_WJJg");
   }
 }
